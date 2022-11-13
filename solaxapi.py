@@ -48,7 +48,7 @@ class SolaxCloud:
             data['inverterStatus'] = self.__inverterStatus(data['inverterStatus'])
             data['inverterType'] = self.__inverterType(data['inverterType'])
         return data
-    
+
     """
     Private helper method to provide a named status instead of a code.
     See also https://www.eu.solaxcloud.com/phoebus/resource/files/userGuide/Solax_API_for_End-user_V1.0.pdf appendix table 5.
@@ -82,9 +82,9 @@ class SolaxCloud:
             return "Gen Check Mode"
         if statusStr == "113":
             return "Gen Run Mode"
-        
+
         return "INVALID STATUS {}".format(statusStr)
-    
+
     """
     Private helper method to provide a named type instead of code.
     See also https://www.eu.solaxcloud.com/phoebus/resource/files/userGuide/Solax_API_for_End-user_V1.0.pdf appendix table 4.
@@ -116,5 +116,5 @@ class SolaxCloud:
             return "A1-Grid"
         if typeId == "13":
             return "J1-ESS"
-        
+
         return "INVALID INVERTER TYPE {}".format(typeId)
